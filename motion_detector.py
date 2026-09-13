@@ -17,15 +17,7 @@ class FrameResult:
 
 
 class MotionDetector:
-    """
-    Stateless-per-call frame-difference motion detector.
-
-    Usage:
-        detector = MotionDetector()
-        gray1 = detector.preprocess(frame1)
-        gray2 = detector.preprocess(frame2)
-        result = detector.detect(gray1, gray2)
-    """
+    
 
     def __init__(
         self,
