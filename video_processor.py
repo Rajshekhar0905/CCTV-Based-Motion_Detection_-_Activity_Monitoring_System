@@ -1,16 +1,4 @@
-"""
-video_processor.py
 
-Reads an input MP4 video frame-by-frame, runs the classical motion detection
-pipeline (motion_detector.py) on it, draws overlays (status text, timestamp,
-motion percentage, bounding boxes), writes an annotated output video, saves a
-snapshot image when each new motion event begins, and produces a CSV report
-summarizing all detected motion events.
-
-This module has no GUI dependencies so it can be used standalone (e.g. from
-the CLI or from tests) as well as from a background thread driven by the
-Tkinter GUI.
-"""
 
 import csv
 import os
