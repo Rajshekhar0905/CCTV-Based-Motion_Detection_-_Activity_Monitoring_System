@@ -58,10 +58,7 @@ class MotionDetector:
         return blurred
 
     def detect(self, prev_gray: np.ndarray, curr_gray: np.ndarray) -> FrameResult:
-        """
-        Compare two preprocessed (resized+gray+blurred) frames and determine
-        whether significant movement occurred between them.
-        """
+        
         if prev_gray.shape != curr_gray.shape:
             curr_gray = cv2.resize(curr_gray, (prev_gray.shape[1], prev_gray.shape[0]))
 
