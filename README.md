@@ -164,9 +164,9 @@ cctv-motion-detection/
 ```
 
 **Design separation:**
-- `motion_detector.py` has no file or GUI dependencies — pure, testable
+- `motion_detector.py` has no file or GUI dependencies pure, testable
   image-processing logic operating on NumPy arrays.
-- `video_processor.py` has no GUI dependencies — it can be run standalone or
+- `video_processor.py` has no GUI dependencies it can be run standalone or
   from tests.
 - `gui.py` depends on both, but never runs processing on the main thread; it
   only reads results from a thread-safe queue.
@@ -209,7 +209,7 @@ pytest>=7.4.0
 python main.py
 ```
 
-This opens the GUI directly — no command-line arguments are needed.
+This opens the GUI directly no command-line arguments are needed.
 
 ## How to Use the GUI
 
@@ -231,10 +231,10 @@ This opens the GUI directly — no command-line arguments are needed.
 
 After processing, the `results/` folder contains:
 
-- **`output_video.mp4`** — the input video re-encoded with overlay text
+- **`output_video.mp4`** the input video re-encoded with overlay text
   (`MOVEMENT DETECTED` / `NO MOVEMENT`, timestamp, motion percentage) and
   bounding boxes drawn around moving regions.
-- **`motion_events.csv`** — one row per detected motion event:
+- **`motion_events.csv`** one row per detected motion event:
 
   | Column | Meaning |
   |---|---|
@@ -244,7 +244,7 @@ After processing, the `results/` folder contains:
   | `duration` | `end_time - start_time`, in seconds |
   | `max_motion_percentage` | Peak motion percentage observed during the event |
 
-- **`snapshots/`** — one JPG image captured at the moment each new event
+- **`snapshots/`** one JPG image captured at the moment each new event
   began (e.g. `event_001.jpg`, `event_002.jpg`, ...).
 
 ## Testing
@@ -283,7 +283,7 @@ security system. Specifically:
 - **Shadows** cast by moving objects are themselves detected as motion.
 - **Static cameras give far better results** than handheld or panning
   footage, since the algorithm assumes a fixed background.
-- It does **not** identify people, vehicles, or objects — it has no concept
+- It does **not** identify people, vehicles, or objects it has no concept
   of "intruder" or "suspicious activity." It only reports that pixels
   changed by more than a configured threshold.
 - Very low-light or heavily compressed/noisy video can reduce accuracy.
@@ -305,7 +305,7 @@ security system. Specifically:
 - This tool is intended for lawful monitoring of spaces where the operator
   has the right to record (e.g. their own property, with appropriate
   notice to anyone who may be recorded, in line with local law).
-- It performs **motion detection only** — it does not perform facial
+- It performs **motion detection only** it does not perform facial
   recognition, identity tracking, or any biometric analysis, and it makes
   no claims about a person's intent or behavior.
 - Users are responsible for complying with local privacy and surveillance
@@ -317,7 +317,7 @@ security system. Specifically:
 ## Conclusion
 
 This project demonstrates that meaningful, useful motion detection can be
-built entirely from classical computer vision techniques — no deep learning
+built entirely from classical computer vision techniques no deep learning
 required. It is deliberately simple, transparent, and easy to audit: every
 step of the detection pipeline (resize, blur, difference, threshold,
 contours) is visible and independently testable, making it a solid
