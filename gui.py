@@ -1,17 +1,3 @@
-"""
-gui.py
-
-Tkinter GUI for the CCTV Motion Detection System.
-
-The heavy video processing work (video_processor.VideoProcessor.process)
-runs on a background thread so the GUI stays responsive. Frames and status
-updates produced on that background thread are pushed onto a thread-safe
-queue.Queue and drained on the Tkinter main thread via `after()` polling,
-which is the standard safe pattern for combining threading with Tkinter
-(Tkinter itself is not thread-safe, so widgets must only be touched from the
-main thread).
-"""
-
 import os
 import queue
 import subprocess
