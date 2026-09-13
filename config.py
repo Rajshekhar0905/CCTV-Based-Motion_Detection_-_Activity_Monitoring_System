@@ -1,9 +1,3 @@
-"""
-config.py
-
-Centralized configuration for the CCTV Motion Detection system.
-Change values here to tune detection sensitivity and I/O behavior.
-"""
 
 import os
 
