@@ -110,9 +110,7 @@ class MotionDetectionApp:
         self.preview_label.configure(image=tk_image, text=text, compound="center", fg="white")
         self.preview_label.image = tk_image  # keep a reference
 
-    # ------------------------------------------------------------------
-    # Button callbacks
-    # ------------------------------------------------------------------
+
     def select_video(self):
         path = filedialog.askopenfilename(
             title="Select CCTV video",
