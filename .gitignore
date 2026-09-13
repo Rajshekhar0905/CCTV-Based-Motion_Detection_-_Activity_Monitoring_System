@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Project outputs (generated at runtime - not source)
+results/output_video.mp4
+results/motion_events.csv
+results/snapshots/*.jpg
+data/input/*.mp4
+data/input/*.avi
+data/input/*.mov
+
+# Keep folder structure
+!results/snapshots/.gitkeep
+!data/input/.gitkeep
