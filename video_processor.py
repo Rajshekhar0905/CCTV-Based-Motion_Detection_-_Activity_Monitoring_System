@@ -46,30 +46,7 @@ class VideoProcessor:
         progress_callback: Optional[Callable[[int, int], None]] = None,
         stop_event: Optional[threading.Event] = None,
     ) -> dict:
-        """
-        Process the video located at `video_path`.
-
-        Args:
-            video_path: path to the input MP4 (or any OpenCV-readable) video.
-            frame_callback: optional callable invoked once per processed
-                frame as (annotated_frame_bgr, status_text, motion_percent,
-                timestamp_str, event_count). Intended for updating a GUI
-                preview; may be called from a background thread.
-            progress_callback: optional callable invoked as
-                (current_frame_index, total_frame_count).
-            stop_event: optional threading.Event; when set, processing stops
-                early and whatever has been produced so far is finalized and
-                saved.
-
-        Returns:
-            A summary dict with keys: events (list of dict rows),
-            event_count, output_video_path, csv_report_path,
-            snapshots_dir, frames_processed, stopped_early.
-
-        Raises:
-            InvalidVideoError: if the video cannot be opened or contains no
-                readable frames.
-        """
+       
         if not video_path or not os.path.isfile(video_path):
             raise InvalidVideoError(f"Video file not found: {video_path}")
 
