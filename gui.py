@@ -30,9 +30,7 @@ class MotionDetectionApp:
         self._build_layout()
         self._poll_queue()
 
-    # ------------------------------------------------------------------
-    # UI construction
-    # ------------------------------------------------------------------
+
     def _build_layout(self):
         title_frame = tk.Frame(self.root, bg="#1f2937", pady=10)
         title_frame.pack(fill="x")
