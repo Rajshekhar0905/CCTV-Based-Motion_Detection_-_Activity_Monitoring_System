@@ -1,21 +1,3 @@
-"""
-motion_detector.py
-
-Classical (non-deep-learning) computer vision motion detection.
-
-Pipeline for each frame:
-    frame -> resize -> grayscale -> Gaussian blur
-    -> absolute difference with previous frame
-    -> threshold -> morphological dilation
-    -> contours -> filter by area -> motion percentage + bounding boxes
-
-Also contains EventTracker, a small state machine that converts a stream of
-per-frame "is there motion?" decisions into discrete motion events with a
-start time, end time, duration, and peak motion percentage. This prevents a
-new "event" from being logged on every single frame and instead groups
-temporally-close motion into one continuous event (see EVENT_GAP_SECONDS).
-"""
-
 from dataclasses import dataclass
 from typing import List, Optional, Tuple
 
